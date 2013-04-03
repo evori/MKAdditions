@@ -89,6 +89,8 @@ static char CANCEL_IDENTIFER;
 		if (alertView.cancelBlock) {
             alertView.cancelBlock();
         }
+        
+        alertView.cancelBlock = nil;
 	}
     else
     {
@@ -96,6 +98,9 @@ static char CANCEL_IDENTIFER;
             alertView.dismissBlock(buttonIndex - 1); // cancel button is button 0
         }
     }
+    
+    alertView.dismissBlock = nil;
+    alertView.cancelBlock = nil;
 }
 
 @end
